@@ -7,7 +7,7 @@
 int main (int argc, char* argv[])
 //int main (int argc, char const * argv[])
 {
-int result = funpwdx()
+int result = funpwdx();
 printf ("%s\n", output);
 return 0;
 }
