@@ -4,12 +4,12 @@
 #include "mylibxxx.h"
 
 
-char * funenvx (char *pid,char *output, size_t limit) {
+int funenvx(char *pid,char *output, size_t limit) {
 	char str[80];
 
 	strcpy(str, "/proc/");
 	strcat(str, pid);
-	strcat(str, end_path);
+	strcat(str,"/environ");
 
 
 	printf("%s\n",str);
@@ -28,12 +28,13 @@ char * funenvx (char *pid,char *output, size_t limit) {
 	}
 
 	fclose(fp);
-	return output;
+
+	return 0;
 }
 
 
 
-char * funpwdx (char* spid,char * target_path,size_t limit)
+int funpwd (char* spid,char * target_path,size_t limit)
 {
  char link_path[256]="/proc/";
  int len;
@@ -44,5 +45,5 @@ char * funpwdx (char* spid,char * target_path,size_t limit)
  printf("link_path='%s',target_path='%s',len=%i\n",link_path,target_path,len);
   target_path[len] = '\0';
     
-  return output;
+  return 0;
 }
