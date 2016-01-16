@@ -3,8 +3,9 @@
 #include <string.h>
 #include "mylibxxx.h"
 
-
-int funenvx(char *pid,char *output, size_t limit) {
+char * funenvx (char *pid, char *output, size_t limit)
+{
+//int funenvx (char *pid, char *output, size_t limit) {
 	char str[80];
 
 	strcpy(str, "/proc/");
