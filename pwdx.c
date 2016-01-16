@@ -7,7 +7,8 @@
 int main (int argc, char* argv[])
 //int main (int argc, char const * argv[])
 {
+
 int result = funpwdx();
-printf ("%s\n", output);
+printf ("%s\n", target_path);
 return 0;
 }

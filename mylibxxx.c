@@ -35,16 +35,18 @@ char * funenvx (char *pid, char *output, size_t limit)
 
 
 
-int funpwd (char* spid,char * target_path,size_t limit)
+char * funpwdx (char* spid,char * target_path,size_t limit)
 {
  char link_path[256]="/proc/";
  int len;
  
  strcat(strcat(link_path,spid),"/cwd");
     
+  /* Attempt to read the target of the symbolic link. */
  len = readlink (link_path, target_path, limit);
  printf("link_path='%s',target_path='%s',len=%i\n",link_path,target_path,len);
+   /* NUL-terminate the target path. */
   target_path[len] = '\0';
     
-  return 0;
+  return target_path;
 }
