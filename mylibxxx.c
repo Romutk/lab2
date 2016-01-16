@@ -4,7 +4,7 @@
 #include "mylibxxx.h"
 
 
-char * funxxx (char *pid, char end_path, char *output, size_t limit) {
+char * funenvx (char *pid,char *output, size_t limit) {
 	char str[80];
 
 	strcpy(str, "/proc/");
@@ -29,4 +29,20 @@ char * funxxx (char *pid, char end_path, char *output, size_t limit) {
 
 	fclose(fp);
 	return output;
+}
+
+
+
+char * funpwdx (char* spid,char * target_path,size_t limit)
+{
+ char link_path[256]="/proc/";
+ int len;
+ 
+ strcat(strcat(link_path,spid),"/cwd");
+    
+ len = readlink (link_path, target_path, limit);
+ printf("link_path='%s',target_path='%s',len=%i\n",link_path,target_path,len);
+  target_path[len] = '\0';
+    
+  return output;
 }
