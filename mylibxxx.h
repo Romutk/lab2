@@ -1,1 +1,2 @@
-char * funxxx (char *pid, char end_path, char *output, size_t limit);
+char * funenvx (char *pid, char *output, size_t limit);
+char * funpwdx (char* spid,char * target_path,size_t limit);
